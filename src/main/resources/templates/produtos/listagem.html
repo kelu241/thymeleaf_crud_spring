@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listage de Produtos</title>
+    <link th:href="@{/css/tabler.min.css}" rel="stylesheet">
+
+  <script th:src="@{/js/tabler.min.js}"></script>
+  </head>
+  <body>
+
+    <div class="page-body">
+      <div class="container-xl">
+        <div class="row">
+          <div class="col-lg-8">
+            <div>
+              <div class="table-responsive">
+                <table class="table table-vcenter card-table">
+                  <thead>
+                    <tr>
+                      <td>Nome</td>
+                      <td>Valor</td>
+                      <td>Ano</td>
+                      <td>Data Lançamento</td>
+                      <td>Deletar</td>
+                    </tr>
+                    <tbody>
+
+                      <tr th:each="produto, rowStat : ${produtos}" th:class="${rowStat.index % 2 == 0 ? 'even' : 'odd'}">
+                        <td class="text-secondary" th:text="${produto.nome}"></td>
+                        <td class="text-secondary" th:text="${produto.valor}"></td>
+                        <td class="text-secondary" th:text="${produto.ano}"></td>
+                        <td class="text-secondary" th:text="${produto.dataLancamento}"></td>
+                        <td>
+                          <form action ="#" th:action="@{/produtos/listagem/{id}(id=${produto.id})}" th:method="delete">
+                            <input type="hidden" name="_method" value="delete">
+                            <button class="btn btn-primary" type="submit">Deletar</button>
+
+                          </form>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                </table>
+
+                <a class="btn btn-primary mt-2" th:href="@{/novo}">Novo Produto</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
+
+

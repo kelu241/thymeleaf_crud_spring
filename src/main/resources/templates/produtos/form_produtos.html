@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link th:href="@{/css/tabler.min.css}" rel="stylesheet">
+    <script th:src="@{/js/tabler.min.js}"></script>
+  </head>
+  <body>
+
+    <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-cards row-cols-1 row-cols-md-2">
+              <div class="col">
+                <div class="row row-cards">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Formulário de Criação de Produtos</h3>
+                      </div>
+                      <div class="card-body">
+                        <form class="space-y" action="#" th:action="@{/adicionar}" th:object="${produto}" method="POST">
+                          <div>
+                            <div class="input-icon">
+                              <span class="input-icon-addon">
+                                <!-- Download SVG icon from http://tabler.io/icons/icon/user -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+                                  <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                </svg>
+                              </span>
+                              <input th:field="*{nome}" type="text" value="" class="form-control" placeholder="Nome do Produto">
+                            </div>
+                          </div>
+                          <div>
+                            <div class="input-icon">
+                              <span class="input-icon-addon">
+                                <!-- Download SVG icon from http://tabler.io/icons/icon/mail -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+                                  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+                                  <path d="M3 7l9 6l9 -6"></path>
+                                </svg>
+                              </span>
+                              <input  th:field="*{valor}" type="text" value="" class="form-control" placeholder="Valor em Reais">
+                            </div>
+                          </div>
+                          <div>
+                            <div class="input-icon">
+                              <span class="input-icon-addon">
+                                <!-- Download SVG icon from http://tabler.io/icons/icon/lock -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+                                  <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+                                  <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+                                  <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+                                </svg>
+                              </span>
+                              <input  th:field="*{ano}"  type="text" value="" class="form-control" placeholder="Ano de Lançamento">
+                            </div>
+                          </div>
+                          <div>
+                            <div class="input-icon">
+                              <span class="input-icon-addon">
+                                <!-- Download SVG icon from http://tabler.io/icons/icon/lock -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+                                  <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+                                  <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+                                  <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+                                </svg>
+                              </span>
+                              <input  th:field="*{dataLancamento}" type="date" value="" class="form-control" placeholder="Data de Lançamento">
+                            </div>
+                          </div>
+                          <div>
+                            <div class="row align-items-center">
+                              <div class="col-auto">
+                                <button type=submit class="btn btn-primary btn-3">
+                                  Criar Produto
+                                  <!-- Download SVG icon from http://tabler.io/icons/icon/arrow-right -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-end icon-2">
+                                    <path d="M5 12l14 0"></path>
+                                    <path d="M13 18l6 -6"></path>
+                                    <path d="M13 6l6 6"></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </body>
+</html>

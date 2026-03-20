@@ -1,19 +1,27 @@
 package com.luciano.thymeleaf.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.util.UUID;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Produto {
-
+  private String id;
   private String nome;
-  private BigDecimal valor;
+  private Double valor;
   private Integer ano;
-  private Date data_lancamento;
+  private LocalDate dataLancamento;
 
-  public Produto(String nome, BigDecimal valor, Integer ano, Date data_lancamento) {
+  public Produto(String nome, Double valor, Integer ano, LocalDate dataLancamento) {
+    this.id = UUID.randomUUID().toString();
     this.nome = nome;
     this.valor = valor;
     this.ano = ano;
-    this.data_lancamento = data_lancamento;
+    this.dataLancamento = dataLancamento;
+
   }
 }

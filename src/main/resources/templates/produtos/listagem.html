@@ -6,7 +6,7 @@
     <title>Listage de Produtos</title>
     <link th:href="@{/css/tabler.min.css}" rel="stylesheet">
 
-  <script th:src="@{/js/tabler.min.js}"></script>
+    <script th:src="@{/js/tabler.min.js}"></script>
   </head>
   <body>
 
@@ -24,6 +24,7 @@
                       <td>Ano</td>
                       <td>Data Lançamento</td>
                       <td>Deletar</td>
+                      <td>Editar</td>
                     </tr>
                     <tbody>
 
@@ -33,12 +34,18 @@
                         <td class="text-secondary" th:text="${produto.ano}"></td>
                         <td class="text-secondary" th:text="${produto.dataLancamento}"></td>
                         <td>
+
                           <form action ="#" th:action="@{/produtos/listagem/{id}(id=${produto.id})}" th:method="delete">
                             <input type="hidden" name="_method" value="delete">
                             <button class="btn btn-primary" type="submit">Deletar</button>
 
                           </form>
                         </td>
+
+                        <td>
+                          <a class="btn btn-primary" th:href="@{/atualizar/{id}(id=${produto.id})}">Editar</a>
+                        </td>
+
                       </tr>
 
                     </tbody>

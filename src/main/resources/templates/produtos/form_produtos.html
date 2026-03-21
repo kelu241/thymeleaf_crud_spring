@@ -20,7 +20,7 @@
                         <h3 class="card-title">Formulário de Criação de Produtos</h3>
                       </div>
                       <div class="card-body">
-                        <form class="space-y" action="#" th:action="@{/adicionar}" th:object="${produto}" method="POST">
+                        <form class="space-y" action="#" th:action="${produto.id == null} ? @{/adicionar}:@{/edicao/{id}(id=${produto.id})}" th:object="${produto}" th:method="${produto.id == null?'post':'put'}">
                           <div>
                             <div class="input-icon">
                               <span class="input-icon-addon">
@@ -68,14 +68,13 @@
                                   <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
                                 </svg>
                               </span>
-                              <input  th:field="*{dataLancamento}" type="date" value="" class="form-control" placeholder="Data de Lançamento">
+                              <input  th:field="*{dataLancamento}" type="date"  class="form-control" placeholder="Data de Lançamento">
                             </div>
                           </div>
                           <div>
                             <div class="row align-items-center">
                               <div class="col-auto">
-                                <button type=submit class="btn btn-primary btn-3">
-                                  Criar Produto
+                                <button th:text="${produto.id == null ?'Criar Produto':'Editar'}" type=submit class="btn btn-primary btn-3">
                                   <!-- Download SVG icon from http://tabler.io/icons/icon/arrow-right -->
                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-end icon-2">
                                     <path d="M5 12l14 0"></path>
